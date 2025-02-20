@@ -38,16 +38,29 @@ System.out.println("Linked List created");
  
 System.out.println("Linked List Before Deleting");
 list.displayList();
-System.out.println("Deletion at Tail");
-list.deleteEnd();
-System.out.println("Linked List After Deleting at tail");
+System.out.println("Deletion at Beginning");
+list.deleteBegin();
+System.out.println("Linked List After Deleting at Beginning");
 list.displayList();
 sc.close();
     }
-public void deleteEnd()
+public void deleteBegin()
+{
+    if (head == null)
     {
-        // TYPE YOUR CODE HERE
+        System.out.println("List is Empty");
     }
+    else
+    {
+       Node temp = head;
+       head = head.next;
+       if (head == null)
+       {
+        tail = null;
+       }
+       System.out.println("Deleted Element is:" + temp.data);
+     }
+}
 public void displayList() {
         Node current = head;
         while (current != null) {
